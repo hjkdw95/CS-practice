@@ -152,11 +152,11 @@ class BST{
     // 중위 순회
     inOrder(node){
         if(node.left !== null){
-            this.preOrder(node.left);
+            this.inOrder(node.left);
         };
         console.log(node.element);
         if(node.right !== null){
-            this.preOrder(node.right);
+            this.inOrder(node.right);
         }
     }
 
@@ -188,6 +188,6 @@ tree.insert('H');
 // tree.postOrder(tree.root); // A, C, E, D, B, H, I, G, F
 
 tree.delete('D')
-// tree.inOrder(tree.root); // A, B, C, E, F, G, H, I
+//tree.inOrder(tree.root); // A, B, C, E, F, G, H, I
 tree.delete('F');
 tree.inOrder(tree.root); // A, B, C, E, G, H, I
