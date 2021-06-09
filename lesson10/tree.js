@@ -130,4 +130,64 @@ class BST{
     }
 
     // 트리의 최대값 반환
+    getMax(node){
+        let current = node;
+        while(current.right !== null){
+            current = current.right;
+        }
+        return current;
+    }
+
+    // 전위 순회 (재귀함수로 구현)
+    preOrder(node){
+        console.log(node.element);
+        if(node.left !== null){
+            this.preOrder(node.left);
+        }
+        if(node.right !== null){
+            this.preOrder(node.right);
+        }
+    }
+
+    // 중위 순회
+    inOrder(node){
+        if(node.left !== null){
+            this.preOrder(node.left);
+        };
+        console.log(node.element);
+        if(node.right !== null){
+            this.preOrder(node.right);
+        }
+    }
+
+    // 후위 순회
+    postOrder(node){
+        if(node.left !== null){
+            this.postOrder(node.left);
+        }
+        if(node.right !== null){
+            this.postOrder(node.right);
+        }
+        console.log(node.element);
+    }
 }
+
+var tree = new BST();
+tree.insert('F');
+tree.insert('B');
+tree.insert('G');
+tree.insert('A');
+tree.insert('D');
+tree.insert('I');
+tree.insert('C');
+tree.insert('E');
+tree.insert('H');
+
+// tree.preOrder(tree.root); // F, B, A, D, C, E, G, I, H
+// tree.inOrder(tree.root); // A, B, C, D, E, F, G, H, I
+// tree.postOrder(tree.root); // A, C, E, D, B, H, I, G, F
+
+tree.delete('D')
+// tree.inOrder(tree.root); // A, B, C, E, F, G, H, I
+tree.delete('F');
+tree.inOrder(tree.root); // A, B, C, E, G, H, I
