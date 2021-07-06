@@ -13,6 +13,7 @@
 // 답안
 const fs = require('fs');
 const input = fs.readFileSync('/dev/stdin').toString().split(' ').map(val=>+val);
+//map() 메서드는 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환한다
 const [A, B, C] = input
 
 console.log( (A + B) % C );
