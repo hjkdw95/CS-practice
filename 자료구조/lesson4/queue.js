@@ -2,6 +2,7 @@
 class CircleQue {
     constructor(size){
         this._arr = []
+        // size: 우리가 지정한 큐의 크기
         this.size = size;
         // length: 큐에 쌓아놓은 데이터 수
         // 큐가 가득 찼는지 아예 비었는지 구분해주는 역할
@@ -84,7 +85,7 @@ class CircleQue {
             // 변수 j는 front부터 rear까지 다 돈다
             for(let j = this.front; j < this.rear + 1; j++){
                 // front부터 rear까지 push해 넣는다
-                final.push(this._arr[(j + 1) % this.size])
+                final.push(this._arr[(j) % this.size])
             }
         }
         console.log(final);
