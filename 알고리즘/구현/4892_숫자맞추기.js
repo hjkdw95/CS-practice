@@ -20,13 +20,8 @@
 // 각 테스트 케이스에 대해서, 1. 케이스 번호를 출력하고 2. n1이 짝수라면 'even', 홀수라면 'odd'를 출력하고, 3. n4를 출력한다.
 
 
-//let fs = require("fs");
-//let input = fs.readFileSync("./dev/stdin").toString().split('\n'); // input = "1\n2\n3\n8\n5\n0";
-
-
-let input = `37\n38\n0`
-const inputs = input.trim().split("\n");
-console.log(inputs);
+let fs = require("fs");
+let input = fs.readFileSync("./dev/stdin").toString().split('\n'); // input = "1\n2\n3\n8\n5\n0";
 
 let i = 0; // array 층 계산 용
 let caseNum = 1; // case 번호 출력 용
@@ -37,7 +32,7 @@ let num4;
 let odd; // 홀짝 확인용
 
 while (true) {
-    let answer = Number(inputs[i]);
+    let answer = Number(input[i]);
     if (answer == 0) {
         break;
     }
