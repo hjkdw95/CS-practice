@@ -11,36 +11,31 @@
 
 // 예제 출력 형식을 참고해 출력한다.
 
-// let fs = require("fs");
-// let input = fs.readFileSync("./dev/stdin").toString().split(' '); 
-let input = "4,2,345"
-let number = Number(input);
-let answer = [];
-let A;
-let B;
+//const input = require('fs').readFileSync('dev/stdin').toString().trim().split('\n').map(x=>+x);
 
-for (let i = 0; i < input.length; i++) {
-    let num = Number(input[i]);         
-    let quotient = num / 2; // 몫 구하기
-    if(quotient != 1) { // 예외처리(2)
-        for (let j = Math.floor(quotient); j > 0; j--) { 
-            if (num % 2 == 0) { // 짝수
-                A = quotient - j + 1;    // 0 1 2
-                B = quotient + j - 1;    // 6 5 4
-                if (A != B) {
-                    answer.push(`${A} ${B}`)
-                }
-            } else if (num % 2 != 0) { // 홀수  
-                A = Math.floor(quotient) - j + 1; // 0 1
-                B = Math.floor(quotient) + j; // 4 3
-                answer.push(`${A} ${B}`);
-            }; 
-        }
-        let result = answer.map(a => ` ${a}`);
-        console.log(`Pairs for ${num}:${String(result)}`);
-        answer = [];
-    } else {
-        console.log(`Paris for ${num}: `)
-    }   
-    
+let inputs = "4\n2\n3\n4\n5";
+let input = inputs.trim().split("\n").map(x => +x); // 숫자로 나열
+// (+) 숫자화 연산자. 피연산자가 숫자값이 아니라면 피연산자를 숫자로 변환하기를 시도합니다.
+
+let output = "";
+
+let n = +input[0]; // 첫번째 입력값은 출력값에 반영 안되니까(테스트 케이스의 수여서) 첫번째 값은 버린다 
+for(let i=1; i<=n; i++){ // 첫번째 입력값 만큼 input을 받았기에 해당 갯수만큼 돌린다
+	const c = input[i];   // input의 첫번째 테스트케이스부터 순서대로 돌린다
+
+	let arr = [];
+	for(let j=1; j<c-j; j++){
+		arr.push([j, c-j]); // 3 -> [1, 2] , 4 -> [1, 3]
+	}
+
+    output += `Pairs for ${c}: ${arr.map(x => x.join(" ")).join(', ')}\n`
 }
+console.log(output);
+
+
+/* 해설
+문제 부분의 입력이 뭘 말하는 지 자세히 이해해야 되는 문제였다.
+첫째 줄은 테스트 케이스의 수(앞으로 뒤따라올 숫자의 갯수)가 적혀있는 것.
+그렇기 때문에 첫번째 입력값인 4는 앞으로 4개가 따라온다는 것으로 인지하면 된다.
+예시에서 4를 첫줄에 줬기에, 이 이후로 4개의 자연수가 나온다고 인지하면 된다.
+*/
