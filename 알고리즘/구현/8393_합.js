@@ -8,7 +8,7 @@
 // 1부터 n까지 합을 출력한다.
 
 
-//const input = require('fs').readFileSync('dev/stdin').toString().trim().map(x => +x);
+//const input = require('fs').readFileSync('dev/stdin').toString().trim();
 
 const inputs = "3";
 const input = inputs.toString().trim();
