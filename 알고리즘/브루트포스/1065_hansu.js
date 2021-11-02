@@ -35,4 +35,3 @@ function sequence(num) {
 
 sequence(num);
 console.log(result);
-

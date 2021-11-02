@@ -8,8 +8,11 @@
 // 출력
 // 첫째 줄에, 42로 나누었을 때, 서로 다른 나머지가 몇 개 있는지 출력한다.
 
-let fs = require('fs');
-let input = fs.readFileSync('/dev/stdin').toString().split("\n"); 
+// let fs = require('fs');
+// let input = fs.readFileSync('/dev/stdin').toString().split("\n"); 
+
+let inputs = "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n";
+let input = inputs.toString().split("\n");
 
 // 입력값 배열로 받기
 let numbers = [];
