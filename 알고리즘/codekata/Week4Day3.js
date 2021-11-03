@@ -15,8 +15,6 @@
 //   ["bat"]
 // ]
 // output에서 순서는 상관없습니다.
-
-// 객체로 같은 글자끼리 묶어서 정리
 const groupAnagrams = (strs) => {
   const map = {};
   for (let str of strs) {
